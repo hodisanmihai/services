@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins";
+  overflow-x: hidden;
+}
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+#loading-screen svg {
+  width: 32.5%;
+  height: auto;
+}
+#loading-screen svg .border {
+  fill: url(#gradient);
+  animation: border-animation 4.5s ease-in;
+}
+#loading-screen svg .s0 {
+  fill: none;
+  stroke: #161d6f;
+  stroke-width: 2;
+  animation: stroke-animation 3s ease-in-out;
+}
+
+@keyframes border-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes stroke-animation {
+  0% {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 1000;
+  }
+  50% {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 0;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: #e4e6f5;
+  z-index: 5;
+}
+header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+header .header .logo {
+  width: 60px;
+  height: 60px;
+  aspect-ratio: 1/1;
+  background-size: cover;
+}
+header .header .hright .buttonb {
+  background-color: inherit;
+  z-index: 5;
+  border: 0;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0;
+  opacity: 1;
+  transform: scale(0.7);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.175s;
+  margin-left: 20px;
+}
+header .header .hright .buttonb:hover {
+  opacity: 1;
+  background: #fff;
+}
+header .header .hright .buttonb .burger {
+  transform: scale(1.85);
+  height: 34px;
+}
+header .header .hright .buttonb .burger svg {
+  height: 36px;
+  transform: translate(-1px, -1px);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .header .hright .buttonb .burger .line {
+  fill: none;
+  stroke: #161d6f;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.75;
+  transition: stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .header .hright .buttonb .burger .line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+header .header .hright .buttonb .burger.is-closed svg {
+  transform: rotate(-135deg) translate(0);
+}
+header .header .hright .buttonb .burger.is-closed svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+.sidebar {
+  z-index: 5;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: rgba(0, 0, 0, 0.99);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.sidebar.active {
+  transform: translateX(0);
+}
+.sidebar .sidebar-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .sidebar-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar .sidebar-content ul li {
+  margin: 15px 0;
+}
+.sidebar .sidebar-content ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+.sidebar .sidebar-content ul li a:hover {
+  color: #161d6f;
+}
+
+main {
+  margin-top: 80px;
+  width: 100vw;
+}
+main .landing {
+  position: relative;
+  height: calc(100vh - 80px);
+  width: 100%;
+  text-align: center;
+  background-color: #1B262C;
+  color: #e4e6f5;
+}
+main .landing .landingcontent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+main .landing .landingcontent .landing-top {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .landing .landingcontent .landing-top h1 {
+  font-size: 70px;
+}
+main .landing .landingcontent .landing-middle {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+}
+main .landing .landingcontent .landing-middle .landing-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .landing .landingcontent .landing-middle .landing-left .landing-image {
+  background-size: cover;
+  width: 650px;
+  height: 650px;
+}
+main .landing .landingcontent .landing-middle .landing-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .landing .landingcontent .landing-middle .landing-right .landing-right-top {
+  width: 50%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .landing .landingcontent .landing-middle .landing-right .landing-buttons {
+  width: 30%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 2px solid #2c2c2c;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 35px;
+  transition: all 0.4s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  margin: 0 10px;
+  box-shadow: -10px 10px 30px rgb(0, 0, 0);
+}
+main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante span {
+  max-width: 100%;
+}
+main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante:hover::after {
+  transform: scale(4);
+}
+main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante:hover {
+  border-color: #666666;
+  background: #292929;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+}
+footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .footer-content .media p {
+  margin: 0;
+}
+footer .footer-content .media a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+footer .footer-content .media a:hover {
+  color: #161d6f;
+}
+footer .footer-content .media a i {
+  font-size: inherit;
+}/*# sourceMappingURL=home.css.map */

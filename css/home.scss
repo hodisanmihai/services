@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+// SCSS Variables
+$primary-color: #161d6f;
+$secondary-color:#1B262C;
+$header-height: 80px;
+$sidebar-width: 100%;
+$sidebar-background: rgba(0, 0, 0, 0.99);
+$footer-background: #1a1a1a;  
+$text-color: #fff;
+$link-hover-color: $primary-color;
+
+* {
+  margin: 0
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Poppins';
+  overflow-x: hidden; // Prevent horizontal scrollbars if there's any overflow
+}
+
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; // Background color during loading
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  svg {
+    width: 32.5%; // Adjust size as needed
+    height: auto;
+
+    .border {
+      fill: url(#gradient);
+      animation: border-animation 4.5s ease-in;
+    }
+
+    .s0 {
+      fill: none;
+      stroke: $primary-color;
+      stroke-width: 2;
+      animation: stroke-animation 3s ease-in-out ;
+    }
+  }
+}
+
+
+@keyframes border-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  50% {
+    opacity: 0;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dasharray: 500; // Total length of the stroke
+    stroke-dashoffset: 1000; // Start with the stroke hidden
+  }
+
+  50% {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+  }
+
+   100% {
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  background-color: #e4e6f5;
+  z-index: 5;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      aspect-ratio: 1/1;
+      background-size:cover;
+    }
+
+    .hright {
+      .buttonb {
+        background-color: inherit;
+        z-index: 5;
+        border: 0;
+        width: 56px;
+        height: 56px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        padding: 0;
+        opacity: 1;
+        transform: scale(0.7);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: 0.175s;
+        margin-left: 20px;
+
+        &:hover {
+          opacity: 1;
+          background: #fff;
+        }
+
+        .burger {
+          transform: scale(1.85);
+          height: 34px;
+
+          svg {
+            height: 36px;
+            transform: translate(-1px, -1px);
+            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .line {
+            fill: none;
+            stroke: $primary-color;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 1.75;
+            transition: stroke-dasharray 500ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 500ms cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .line-top-bottom {
+            stroke-dasharray: 12 63;
+          }
+
+          &.is-closed {
+            svg {
+              transform: rotate(-135deg) translate(0);
+
+              .line-top-bottom {
+                stroke-dasharray: 20 300;
+                stroke-dashoffset: -32.42;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.sidebar {
+  z-index: 5;
+  position: fixed;
+  top: $header-height;
+  left: 0;
+  width: $sidebar-width;
+  height: calc(100vh - $header-height);
+  background-color: $sidebar-background;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .sidebar-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin: 15px 0;
+
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-size: 1.2rem;
+          transition: color 0.3s;
+
+          &:hover {
+            color: $link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+main {
+  margin-top: $header-height;
+    width: 100vw;
+
+  .landing {
+    position: relative;
+    height: calc(100vh - $header-height);
+    width: 100%;
+    text-align: center;
+    background-color: $secondary-color;
+    color: #e4e6f5;
+
+    .landingcontent{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%; 
+
+
+      .landing-top{
+        width: 100%;
+        height: 20%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+            
+            h1{
+              font-size: 70px;
+            }
+      }
+      
+      .landing-middle{
+        width: 100%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+    
+        .landing-left{
+          width: 50%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+            
+          .landing-image{
+            background-size: cover;
+            width: 650px;
+            height: 650px;
+          }
+
+        }
+ 
+        .landing-right{
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .landing-right-top{
+             width: 50%;
+             height: 25%;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+          }
+          .landing-buttons{
+            width: 30%;
+            height: 25%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            
+            .boton-elegante {
+              width: 100%;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none;
+                border: 2px solid #2c2c2c;
+                background-color: #1a1a1a;
+                color: #ffffff;
+                cursor: pointer;
+                border-radius: 35px;
+                transition: all 0.4s ease;
+                outline: none;
+                position: relative;
+                overflow: hidden;
+                font-weight: bold;
+                margin: 0 10px;
+                box-shadow: -10px 10px 30px rgba(0, 0, 0, 1);
+
+                span{
+                  max-width: 100%;
+                }
+            
+                &::after {
+                  content: "";
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  background: radial-gradient(circle,
+                      rgba(255, 255, 255, 0.25) 0%,
+                      rgba(255, 255, 255, 0) 70%);
+                  transform: scale(0);
+                  transition: transform 0.5s ease;
+                }
+            
+                &:hover::after {
+                  transform: scale(4);
+                }
+            
+                &:hover {
+                  border-color: #666666;
+                  background: #292929;
+                }
+              }
+
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+
+footer {
+  background-color: $footer-background;
+  color: $text-color;
+  padding: 20px;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .media {
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: $text-color;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $link-hover-color;
+        }
+
+        i {
+          font-size: inherit;
+        }
+      }
+    }
+  }
+}

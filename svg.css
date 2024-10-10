@@ -1,0 +1,47 @@
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #000;
+        }
+
+        .svg-container {
+          position: relative;
+        }
+
+        .s0 {
+          fill: url(#gradient);
+          opacity: 0;
+          animation: fill 1s ease-in forwards 1.8s;
+        }
+
+        @keyframes draw {
+          0% {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+          }
+
+          100% {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 0;
+          }
+        }
+
+        @keyframes fill {
+          0% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
+        .border {
+          fill: none;
+          stroke: url(#gradient);
+          stroke-width: 3;
+          animation: draw 2s ease-in-out;
+        } 

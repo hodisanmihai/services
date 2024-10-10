@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="icon" href="images/logo-hm.png" type="image/x-icon">
+  <title>Hodisan Mihai</title>
+</head>
+
+<body>  
+  <div id="loading-screen">
+    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+      <title>Loading Screen</title>
+      <g id="Background">
+        <path class="border"
+          d="m163 68h34v106l-34-19zm142 0h34v88l-34 19zm-215 61l59 33v39l-24-13v200h-6l-28-16zm317 3h3l-1 235-34 18v-195l-22 12v-39zm-245 38l89 51 89-50v39l-1 197-33 19-1-196-53 31-55-31-1 202-33-19z" />
+        <path class="s0"
+          d="m163 68h34v106l-34-19zm142 0h34v88l-34 19zm-215 61l59 33v39l-24-13v200h-6l-28-16zm317 3h3l-1 235-34 18v-195l-22 12v-39zm-245 38l89 51 89-50v39l-1 197-33 19-1-196-53 31-55-31-1 202-33-19z" />
+      </g>
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#91989D; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#383B3B; stop-opacity:1" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <header>
+    <div class="header">
+      <a href="#landing" class="logo" style="background-image: url(images/logo-hm.png);"></a>
+      <div class="hright">
+        <button onclick="toggleSidebar()" class="buttonb" id="button">
+          <span class="burger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+              </path>
+              <path class="line" d="M7 16 27 16"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul>
+        <li><a href="#services">Servicii</a></li>
+        <li><a href="#schedule-section">Program</a></li>
+        <li><a href="#location">Unde ne gasesti?</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <div class="landing" id="landing">
+      <div class="landingcontent">
+            <div class="landing-top"><h1>Afacaerea Ta Merita un Website Profesionsit</h1></div>
+            <div class="landing-middle">
+               <div class="landing-left">
+                 <div class="landing-image" style="background-image: url(images/telefon-laptop.png);"></div>
+               </div>
+               <div class="landing-right">
+                 <div class="landing-right-top">
+                   <h2>Atrage mai multi clienti cu un Design inteligent si o Perfomrmanta rapida pentru Afacerea Ta</h2>
+                 </div>
+                 <div class="landing-buttons">
+                    <a href="" class="boton-elegante"><span>Solicita o consulutanta gratuita</span></a>
+                    <a href="" style="color:#161d6f" class="boton-elegante">Afla mai multe</a>
+                 </div>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page" id="services">
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="media">
+          <p>Social Media:</p>
+          <a href="" target="_blank" class="instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" target="_blank" class="facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="home.js"></script>
+</body>
+
+</html> 
