@@ -66,6 +66,17 @@ body {
     stroke-dashoffset: 0;
   }
 }
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 header {
   position: fixed;
   top: 0;
@@ -226,6 +237,7 @@ main .landing .landingcontent .landing-middle .landing-left .landing-image {
   background-size: cover;
   width: 650px;
   height: 650px;
+  animation: float 2.5s ease-in-out infinite;
 }
 main .landing .landingcontent .landing-middle .landing-right {
   width: 50%;
