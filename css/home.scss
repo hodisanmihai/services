@@ -1109,7 +1109,7 @@ main {
           position: relative;
           display: flex;
           max-width: 350px;
-          height: 650px; // Fixed height for uniformity
+          height: 650px;
           flex-direction: column;
           border-radius: 12px;
           background-color: #212121;
@@ -1124,7 +1124,7 @@ main {
 
           @media (max-width: $phone-breakpoint) {
             max-width: 280px;
-            height: 550px;
+            height: 600px;
             padding: 1.5rem;
             margin-bottom: 20px;
           }
@@ -1151,13 +1151,13 @@ main {
             text-align: center;
 
             @media (max-width: $phone-breakpoint) {
-              margin-bottom: 1rem; // Adjusted margin for compactness
+              margin-bottom: 1rem;
             }
 
             .title {
               display: block;
               font-family: sans-serif;
-              font-size: 0.875rem; // Reduced font size for smaller screens
+              font-size: 0.875rem;
               line-height: 1.25rem;
               text-transform: uppercase;
               color: #fff;
@@ -1167,12 +1167,14 @@ main {
           .price-container {
             margin-top: 10px;
             display: flex;
+            flex-wrap: row;
             justify-content: center;
             align-items: flex-start;
             gap: 4px;
             font-family: sans-serif;
-            font-size: 4.5rem; // Default font size for desktop
+            font-size: 4.5rem; 
 
+            
             span {
               &:first-child {
                 margin-top: 10px;
@@ -1188,19 +1190,30 @@ main {
             }
 
             @media (max-width: $phone-breakpoint) {
-              font-size: 3rem; // Reduced font size for mobile
+              font-size: 3rem;
 
               span {
                 &:first-child {
-                  font-size: 1.75rem; // Smaller font size
+                  font-size: 1.25rem;
                 }
 
                 &:last-child {
-                  font-size: 1.75rem; // Smaller font size
+                  font-size: 1.25rem; 
                 }
               }
             }
           }
+
+
+                    .pack-description {
+                      font-size: 16px;
+                      margin-bottom:15px;
+
+                      @media (max-width:$phone-breakpoint) {
+                        font-size: 13px;
+                      }
+
+                    }
 
           .lists {
             display: flex;
@@ -1212,12 +1225,21 @@ main {
               align-items: center;
               gap: 10px;
 
+                              p {
+                                  font-size: 15px;
+
+                                  @media (max-width:$phone-breakpoint) {
+                                      font-size: 13px;
+                                    }
+
+                                }
+
               span {
-                font-size: 24px; // Default font size for desktop
+                font-size: 15px;
                 color: #fff;
 
                 @media (max-width: $phone-breakpoint) {
-                  font-size: 20px; // Smaller font size for lists on mobile
+                  font-size: 15px;
                 }
               }
             }
@@ -1225,7 +1247,7 @@ main {
 
           .button-container {
             margin-top: auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             padding: 0;
 
             a {
@@ -1233,7 +1255,7 @@ main {
               display: inline-flex;
               width: 90%;
               background-color: #fff;
-              padding: 10px 20px; // Default padding for desktop
+              padding: 10px 20px;
               text-transform: uppercase;
               color: #181818;
               outline: 0;
@@ -1243,7 +1265,7 @@ main {
               justify-content: center;
 
               @media (max-width: $phone-breakpoint) {
-                padding: 5px 10px; // Adjusted padding for mobile
+                padding: 5px 10px;
               }
             }
           }
