@@ -282,6 +282,14 @@ if (content && scrollbar && thumb) {
 
 checkVisibility();
 
-document.getElementById('card').addEventListener('click', function() {
-  this.classList.toggle('flipped');
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const cardInner = card.querySelector('.card-inner');
+    if (cardInner.style.transform === 'rotateY(180deg)') {
+      cardInner.style.transform = 'rotateY(0deg)';
+    } else {
+      cardInner.style.transform = 'rotateY(180deg)';
+    }
+  });
 });
+

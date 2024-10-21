@@ -584,7 +584,7 @@ main .page-services .services-content .services .services-align .card-back li {
   main .page-services .page-services .services #card .card-inner:hover .card-inner {
     transform: rotateY(180deg);
   }
-  main .page-services .page-services .services #card .card-inner.flipped .card-inner {
+  main .page-services .page-services .services #card .card-inner.flipped {
     transform: rotateY(180deg);
   }
   main .page-services .page-services .services #card .card-inner .card-front,
