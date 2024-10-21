@@ -688,7 +688,7 @@ main {
 
         .services-align {}
 
-        .card {
+        #card {
           width: 95%;
           max-width: 400px;
           height: auto;
@@ -704,6 +704,10 @@ main {
             &:hover .card-inner {
               transform: rotateY(180deg);
             }
+
+             &.flipped .card-inner {
+                 transform: rotateY(180deg);
+                 }
 
             .card-front,
             .card-back {

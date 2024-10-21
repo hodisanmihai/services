@@ -568,7 +568,7 @@ main .page-services .services-content .services .services-align .card-back li {
     align-items: center;
     gap: 20px;
   }
-  main .page-services .page-services .services .card {
+  main .page-services .page-services .services #card {
     width: 95%;
     max-width: 400px;
     height: auto;
@@ -576,33 +576,36 @@ main .page-services .services-content .services .services-align .card-back li {
     animation: float 1.5s forwards infinite;
     margin-bottom: 20px;
   }
-  main .page-services .page-services .services .card .card-inner {
+  main .page-services .page-services .services #card .card-inner {
     border-radius: 20px;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.6s;
   }
-  main .page-services .page-services .services .card .card-inner:hover .card-inner {
+  main .page-services .page-services .services #card .card-inner:hover .card-inner {
     transform: rotateY(180deg);
   }
-  main .page-services .page-services .services .card .card-inner .card-front,
-  main .page-services .page-services .services .card .card-inner .card-back {
+  main .page-services .page-services .services #card .card-inner.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  main .page-services .page-services .services #card .card-inner .card-front,
+  main .page-services .page-services .services #card .card-inner .card-back {
     padding: 15px;
     border-radius: 20px;
   }
-  main .page-services .page-services .services .card .card-inner .card-front h3.card-title {
+  main .page-services .page-services .services #card .card-inner .card-front h3.card-title {
     font-size: 20px;
   }
-  main .page-services .page-services .services .card .card-inner .card-front p.card-content {
+  main .page-services .page-services .services #card .card-inner .card-front p.card-content {
     font-size: 16px;
   }
-  main .page-services .page-services .services .card .card-inner .card-front .view-more {
+  main .page-services .page-services .services #card .card-inner .card-front .view-more {
     padding: 5px 15px;
     font-size: 16px;
   }
-  main .page-services .page-services .services .card .card-inner .card-back ul {
+  main .page-services .page-services .services #card .card-inner .card-back ul {
     gap: 10px;
   }
-  main .page-services .page-services .services .card .card-inner .card-back ul li {
+  main .page-services .page-services .services #card .card-inner .card-back ul li {
     font-size: 16px;
   }
 }

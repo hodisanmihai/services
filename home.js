@@ -281,3 +281,7 @@ if (content && scrollbar && thumb) {
 }
 
 checkVisibility();
+
+document.getElementById('card').addEventListener('click', function() {
+  this.classList.toggle('flipped');
+});
