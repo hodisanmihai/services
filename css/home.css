@@ -1004,7 +1004,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .pr
 }
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .price-container {
-    font-size: 3rem;
+    font-size: 1.25rem;
   }
   main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .price-container span:first-child {
     font-size: 1.25rem;
