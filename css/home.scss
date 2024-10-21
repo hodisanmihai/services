@@ -459,7 +459,7 @@ main {
         .landing-top {
           h1 {
             margin-top: 20px;
-            font-size: 20px;
+            font-size: 30px;
             padding: 0 75px;
           }
         }
@@ -498,17 +498,17 @@ main {
   
             .landing-buttons {
               width: 80%;
-              flex-direction: row;
+              flex-direction: column;
               gap: 10px;
   
               .boton-elegante {
-                font-size: 12px;
-                padding: 5px 20px;
+                font-size: 14px;
+                padding: 5px 10px;
                 height: 35px;
                 margin: 0;
 
                 @media (max-width:$phone-breakpoint) {
-                  font-size: 10px;
+                  font-size: 14px;
 
                 }
 

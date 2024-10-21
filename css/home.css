@@ -373,7 +373,7 @@ main .landing .landingcontent .landing-middle .landing-right .landing-buttons .b
   }
   main .landing .landingcontent .landing-top h1 {
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 30px;
     padding: 0 75px;
   }
   main .landing .landingcontent .landing-middle {
@@ -403,19 +403,19 @@ main .landing .landingcontent .landing-middle .landing-right .landing-buttons .b
   }
   main .landing .landingcontent .landing-middle .landing-right .landing-buttons {
     width: 80%;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
   }
   main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante {
-    font-size: 12px;
-    padding: 5px 20px;
+    font-size: 14px;
+    padding: 5px 10px;
     height: 35px;
     margin: 0;
   }
 }
 @media (max-width: 600px) and (max-width: 600px) {
   main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 main .page-services {
