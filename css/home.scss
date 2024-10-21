@@ -686,7 +686,6 @@ main {
         align-items: center;
         gap: 20px;
 
-        .services-align {}
 
         #card {
           width: 95%;
@@ -1092,6 +1091,8 @@ main {
           border-radius: 8px;
           display: none;
 
+
+
           .thumb {
             background: #e0e0e0;
             border-radius: 8px;
@@ -1108,7 +1109,7 @@ main {
           position: relative;
           display: flex;
           max-width: 350px;
-          height: 650px;
+          height: 650px; // Fixed height for uniformity
           flex-direction: column;
           border-radius: 12px;
           background-color: #212121;
@@ -1122,7 +1123,10 @@ main {
           margin: 5px;
 
           @media (max-width: $phone-breakpoint) {
-            max-height:625px;
+            max-width: 280px;
+            height: 550px;
+            padding: 1.5rem;
+            margin-bottom: 20px;
           }
 
           &.visible {
@@ -1146,10 +1150,14 @@ main {
             padding-bottom: 1rem;
             text-align: center;
 
+            @media (max-width: $phone-breakpoint) {
+              margin-bottom: 1rem; // Adjusted margin for compactness
+            }
+
             .title {
               display: block;
               font-family: sans-serif;
-              font-size: 0.875rem;
+              font-size: 0.875rem; // Reduced font size for smaller screens
               line-height: 1.25rem;
               text-transform: uppercase;
               color: #fff;
@@ -1163,8 +1171,7 @@ main {
             align-items: flex-start;
             gap: 4px;
             font-family: sans-serif;
-            font-size: 4.5rem;
-            line-height: 1;
+            font-size: 4.5rem; // Default font size for desktop
 
             span {
               &:first-child {
@@ -1177,6 +1184,20 @@ main {
                 align-self: flex-end;
                 font-size: 2.25rem;
                 line-height: 2.5rem;
+              }
+            }
+
+            @media (max-width: $phone-breakpoint) {
+              font-size: 3rem; // Reduced font size for mobile
+
+              span {
+                &:first-child {
+                  font-size: 1.75rem; // Smaller font size
+                }
+
+                &:last-child {
+                  font-size: 1.75rem; // Smaller font size
+                }
               }
             }
           }
@@ -1192,8 +1213,12 @@ main {
               gap: 10px;
 
               span {
-                font-size: 24px;
+                font-size: 24px; // Default font size for desktop
                 color: #fff;
+
+                @media (max-width: $phone-breakpoint) {
+                  font-size: 20px; // Smaller font size for lists on mobile
+                }
               }
             }
           }
@@ -1208,7 +1233,7 @@ main {
               display: inline-flex;
               width: 90%;
               background-color: #fff;
-              padding: 10px 20px;
+              padding: 10px 20px; // Default padding for desktop
               text-transform: uppercase;
               color: #181818;
               outline: 0;
@@ -1216,6 +1241,10 @@ main {
               border-radius: 10px;
               text-align: center;
               justify-content: center;
+
+              @media (max-width: $phone-breakpoint) {
+                padding: 0px 0px; // Adjusted padding for mobile
+              }
             }
           }
         }

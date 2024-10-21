@@ -944,7 +944,10 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container {
 }
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container {
-    max-height: 625px;
+    max-width: 280px;
+    height: 550px;
+    padding: 1.5rem;
+    margin-bottom: 20px;
   }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container.visible {
@@ -966,6 +969,11 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .he
   padding-bottom: 1rem;
   text-align: center;
 }
+@media (max-width: 600px) {
+  main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .header {
+    margin-bottom: 1rem;
+  }
+}
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .header .title {
   display: block;
   font-family: sans-serif;
@@ -982,7 +990,6 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .pr
   gap: 4px;
   font-family: sans-serif;
   font-size: 4.5rem;
-  line-height: 1;
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .price-container span:first-child {
   margin-top: 10px;
@@ -993,6 +1000,17 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .pr
   align-self: flex-end;
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+@media (max-width: 600px) {
+  main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .price-container {
+    font-size: 3rem;
+  }
+  main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .price-container span:first-child {
+    font-size: 1.75rem;
+  }
+  main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .price-container span:last-child {
+    font-size: 1.75rem;
+  }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .lists {
   display: flex;
@@ -1007,6 +1025,11 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .li
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .lists .list span {
   font-size: 24px;
   color: #fff;
+}
+@media (max-width: 600px) {
+  main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .lists .list span {
+    font-size: 20px;
+  }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .button-container {
   margin-top: auto;
@@ -1026,6 +1049,11 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .bu
   border-radius: 10px;
   text-align: center;
   justify-content: center;
+}
+@media (max-width: 600px) {
+  main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .button-container a {
+    padding: 0px 0px;
+  }
 }
 
 footer {
