@@ -1,7 +1,7 @@
-// Smooth scroll function with offset
+
 function smoothScrollTo(target, duration = 1000) {
     const startPosition = window.scrollY;
-    const targetPosition = target.getBoundingClientRect().top + window.scrollY - 80; // Subtract 80px for offset
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY - 80;
     const distance = targetPosition - startPosition;
     let startTime = null;
 
@@ -22,7 +22,6 @@ function smoothScrollTo(target, duration = 1000) {
     requestAnimationFrame(animation);
 }
 
-// Toggle sidebar visibility on burger button click
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     const burgerButton = document.getElementById('button');
@@ -31,10 +30,8 @@ function toggleSidebar() {
     burgerButton.querySelector('span').classList.toggle('is-closed');
 }
 
-// Attach to the burger button
 document.getElementById('button').onclick = toggleSidebar;
 
-// Smooth scroll and close sidebar when a sidebar link is clicked
 document.querySelectorAll('.sidebar a').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault(); 
@@ -50,13 +47,12 @@ document.querySelectorAll('.sidebar a').forEach(link => {
             burgerButton.querySelector('span').classList.remove('is-closed');
 
             setTimeout(() => {
-                smoothScrollTo(targetElement, 1500);
-            }, 300); // Delay for sidebar closing animation
+                smoothScrollTo(targetElement, 1000);
+            }, 300);
         }
     });
 });
 
-// Add event listener for the logo
 document.querySelector('.logo').addEventListener('click', function (e) {
     e.preventDefault();
 
@@ -70,8 +66,8 @@ document.querySelector('.logo').addEventListener('click', function (e) {
         burgerButton.querySelector('span').classList.remove('is-closed');
 
         setTimeout(() => {
-            smoothScrollTo(targetElement, 1500);
-        }, 300); // Delay for sidebar closing animation
+            smoothScrollTo(targetElement, 1000);
+        }, 300);
     }
 });
 
@@ -90,13 +86,12 @@ document.querySelectorAll('footer ul li a').forEach(link => {
             burgerButton.querySelector('span').classList.remove('is-closed');
 
             setTimeout(() => {
-                smoothScrollTo(targetElement, 1500);
-            }, 300); // Delay for sidebar closing animation
+                smoothScrollTo(targetElement, 1000);
+            }, 300);
         }
     });
 });
 
-// Smooth scroll and close sidebar when any .scroll-link is clicked
 document.querySelectorAll('.scroll-link').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault(); 
@@ -105,7 +100,7 @@ document.querySelectorAll('.scroll-link').forEach(link => {
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-            // Close sidebar and reset burger button if it was from the sidebar
+
             const sidebar = document.getElementById('sidebar');
             const burgerButton = document.getElementById('button');
             if (sidebar.classList.contains('active')) {
@@ -113,17 +108,15 @@ document.querySelectorAll('.scroll-link').forEach(link => {
                 burgerButton.querySelector('span').classList.remove('is-closed');
             }
 
-            // Smooth scroll with delay for a better visual effect
             setTimeout(() => {
-                smoothScrollTo(targetElement, 1500); // Adjust duration as needed
-            }, 300); // Delay can be tweaked
+                smoothScrollTo(targetElement, 1000);
+            }, 100);
         }
     });
 });
 
 
 
-// Loading screen logic
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
     const minLoadingTime = 3500;
@@ -147,7 +140,6 @@ window.addEventListener('load', function() {
     setTimeout(checkLoadDuration, loadingDuration);
 });
 
-// Scroll on reveal functionality
 document.addEventListener('DOMContentLoaded', function() {
     const reveals = document.querySelectorAll('.reveal');
 
@@ -164,23 +156,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Scroll event
     window.addEventListener('scroll', () => {
         handleReveal();
     });
 
-    // Initial check
+
     handleReveal();
 });
 
-// Cards show logic with % visibility requirement on both sides
 const cards = document.querySelectorAll('.pack-container');
 const pricingInner = document.querySelector('.pricing-inner');
 
-// Initially hide all cards
 cards.forEach(card => {
-    card.style.opacity = '0'; // Set opacity to 0
-    card.style.transform = 'rotateY(-55deg)'; // Set starting position
+    card.style.opacity = '0'; 
+    card.style.transform = 'rotateY(-55deg)';
 });
 
 const checkVisibility = () => {
@@ -207,15 +196,12 @@ const checkVisibility = () => {
     });
 };
 
-// Initial check with a slight delay
 setTimeout(() => {
     checkVisibility();
 }, 500);
 
-// Add smooth scrolling to container
 pricingInner.style.scrollBehavior = 'smooth';
 
-// Grabbing functionality
 let isDown = false;
 let startX;
 let scrollLeft;
@@ -245,7 +231,6 @@ pricingInner.addEventListener('mousemove', (e) => {
     pricingInner.scrollLeft = scrollLeft - walk;
 });
 
-// Throttled scroll handler
 let isScrolling = false;
 pricingInner.addEventListener('scroll', () => {
     if (!isScrolling) {
@@ -257,7 +242,6 @@ pricingInner.addEventListener('scroll', () => {
     }
 });
 
-// Handle window resize
 window.addEventListener('resize', () => {
     if (!isScrolling) {
         window.requestAnimationFrame(() => {
@@ -268,7 +252,6 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Custom scrollbar implementation
 const content = document.querySelector('.content');
 const scrollbar = document.querySelector('.custom-scrollbar');
 const thumb = document.querySelector('.thumb');
@@ -293,10 +276,8 @@ if (content && scrollbar && thumb) {
         scrollbar.scrollTop = scrollPercent * (scrollbar.clientHeight - thumb.clientHeight);
     });
 
-    // Initialize scrollbar
     updateScrollbar();
     window.addEventListener('resize', updateScrollbar);
 }
 
-// Initialize the visibility check for the cards
 checkVisibility();

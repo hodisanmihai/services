@@ -27,41 +27,29 @@ body .reveal.active {
 }
 body::-webkit-scrollbar {
   width: 5px;
-  /* Width of the scrollbar */
   height: 2px;
-  /* Height for horizontal scrollbar */
 }
 body::-webkit-scrollbar-track {
   background: transparent;
-  /* Background color of the track */
   border-radius: 30px;
-  /* Rounded corners for track */
 }
 body::-webkit-scrollbar-thumb {
   background: #333;
-  /* Color of the scrollbar thumb */
   border-radius: 30px;
-  /* Rounded corners for thumb */
 }
 body .custom-scrollbar {
   position: absolute;
   right: 0;
   top: 0;
   width: 1px;
-  /* Width of the custom scrollbar */
   height: 100%;
   background: transparent;
-  /* Background for the scrollbar track */
   border-radius: 8px;
-  /* Rounded corners */
   display: none;
-  /* Hidden by default */
 }
 body .custom-scrollbar .thumb {
   background: transparent;
-  /* Color of the scrollbar thumb */
   border-radius: 8px;
-  /* Rounded corners */
   width: 10%;
   cursor: pointer;
 }
@@ -420,9 +408,14 @@ main .landing .landingcontent .landing-middle .landing-right .landing-buttons .b
   }
   main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante {
     font-size: 12px;
-    padding: 10 px 10px;
+    padding: 5px 20px;
     height: 35px;
     margin: 0;
+  }
+}
+@media (max-width: 600px) and (max-width: 600px) {
+  main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante {
+    font-size: 10px;
   }
 }
 main .page-services {
@@ -893,49 +886,37 @@ main .pricing .pricing-content .pricing-cards .pricing-inner {
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner {
     width: 90%;
+    height: 800px;
   }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner::-webkit-scrollbar {
   width: 12px;
-  /* Width of the scrollbar */
   height: 5px;
-  /* Height for horizontal scrollbar */
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner::-webkit-scrollbar-track {
   background: transparent;
-  /* Background color of the track */
   border-radius: 16px;
-  /* Rounded corners for track */
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner::-webkit-scrollbar-thumb {
   background: #e0e0e0;
-  /* Color of the scrollbar thumb */
   border-radius: 30px;
-  /* Rounded corners for thumb */
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner::-webkit-scrollbar-thumb:hover {
   background: darkblue;
-  /* Darker thumb color on hover */
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .custom-scrollbar {
   position: absolute;
   right: 0;
   top: 0;
   width: 12px;
-  /* Width of the custom scrollbar */
   height: 100%;
   background: #e0e0e0;
-  /* Background for the scrollbar track */
   border-radius: 8px;
-  /* Rounded corners */
   display: none;
-  /* Hidden by default */
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .custom-scrollbar .thumb {
   background: #e0e0e0;
-  /* Color of the scrollbar thumb */
   border-radius: 8px;
-  /* Rounded corners */
   width: 100%;
   cursor: pointer;
 }
@@ -958,6 +939,11 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container {
   transform: rotateX(-45deg);
   backface-visibility: hidden;
   margin: 5px;
+}
+@media (max-width: 600px) {
+  main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container {
+    height: 100%;
+  }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container.visible {
   opacity: 1;
