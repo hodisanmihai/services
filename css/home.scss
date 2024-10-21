@@ -25,6 +25,12 @@ body {
   font-family: 'Poppins';
   overflow-x: hidden;
 
+  @media (max-width: $phone-breakpoint) {
+    width:100vw;
+    overflow-x: hidden;
+  } 
+
+
       .reveal {
           opacity: 0;
           transform: translateY(50px);
@@ -186,6 +192,7 @@ header {
   height: $header-height;
   background-color: #e4e6f5;
   z-index: 5;
+  width: 100vw;
 
   .header {
     display: flex;
@@ -317,7 +324,9 @@ header {
 
 main {
   margin-top: $header-height;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
+
 
   .landing {
     position: relative;
@@ -452,12 +461,76 @@ main {
       }
     }
 
+    @media (max-width: $phone-breakpoint) {
+      height: auto; // Adjust height to fit content
+  
+      .landingcontent {
+        flex-direction: column; // Stack elements vertically
+        padding: 10px;
+  
+        .landing-top {
+          h1 {
+            margin-top: 20px;
+            font-size: 20px; // Smaller font size for mobile
+            padding: 0 75px; // Add padding to prevent text from touching screen edges
+          }
+        }
+  
+        .landing-middle {
+          flex-direction: column; // Stack the image and text on top of each other
+          align-items: center;
+  
+          .landing-left,
+          .landing-right {
+            width: 100%; // Full width on mobile
+            height: auto; // Let content dictate height
+            padding: 10px 0; // Add some spacing
+          }
+  
+          .landing-left {
+            .landing-image {
+              width: 300px; // Smaller image size for mobile
+              height: 300px;
+            }
+          }
+  
+          .landing-right {
+
+                          margin-bottom:15%;
+
+            .landing-right-top {
+              width: 90%; // Adjust width to fit mobile screen
+              text-align: center; // Center-align the text
+  
+              h2 {
+                font-size: 18px; // Smaller font size for readability
+                padding: 15px; // Padding to avoid text touching screen edges
+              }
+            }
+  
+            .landing-buttons {
+              width: 80%; // Make buttons take more space on mobile
+              flex-direction: row; // Align buttons side-by-side on smaller screens
+              gap: 10px;
+  
+              .boton-elegante {
+                font-size: 12px; // Adjust button font size
+                padding: 10 px 10px;
+                height: 35px;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
   }
 
 
 .page-services {
   width: 100%;
-  height: 1175px;
+  min-height: 1200px;
   background-color: #e4e6f5;
   position: relative;
 
@@ -476,13 +549,12 @@ main {
       height: 45px;
 
       .shape-fill {
-        fill: $secondary-color;
+        fill: $secondary-color; // Make sure $secondary-color is defined
       }
     }
   }
 
   .services-content {
-
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -491,111 +563,197 @@ main {
     .services-title {
       margin-top: 2.5%;
       margin-bottom: 5%;
-      font-size: $title-font;
+      font-size: $title-font; // Ensure $title-font is defined
 
+              @media (max-width: $phone-breakpoint) {
+                  font-size: 40px;
+                  margin-top: 7%;
+                }
+      
     }
 
     .services {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      justify-content: center; // Center alignment
+      flex-direction: column; // Keep this as column initially
       width: 100%;
       gap: 110px;
+      margin-top: 50px;
+
+              @media (max-width: $phone-breakpoint) {
+                  margin-bottom: 75px;
+                }
 
       .services-align {
-        display: flex;
-        flex-direction: row;
+        display: flex; // Default to flex container
+        flex-direction: row; // Default direction
         gap: 120px;
 
+        // Media query for smaller screens
+        @media (max-width: $phone-breakpoint) {
+          flex-direction: column; // Change to column direction for mobile
+        }
 
-.card {
-    width: 190px;
-    height: 344px;
-    perspective: 1000px;
-    animation: float 2s forwards infinite;
-  }
+        .card {
+          width: 190px;
+          height: 344px;
+          perspective: 1000px;
+          animation: float 2s forwards infinite;
+        }
 
-  .card-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    border-radius: 50px;
-    background: #e0e0e0;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-  }
+        .card-inner {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          transition: transform 1s;
+          border-radius: 50px;
+          background: #e0e0e0;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
 
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
+        .card:hover .card-inner {
+          transform: rotateY(180deg);
+        }
 
-  .card-front,
-  .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 50px;
-  }
+        .card-front,
+        .card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: 50px;
+        }
 
-  .card-front {
-    background-color: #ffffff;
-    color: #000000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 20px;
-    text-align: center;
-    padding: 16px;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        .card-front {
+          background-color: #ffffff;
+          color: #000000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          font-size: 20px;
+          text-align: center;
+          padding: 16px;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 
-    .view-more {
-      background-color: #e4e6f5;
-      padding: 5px 20px;
-      border-radius: 30px;
+          .view-more {
+            background-color: #e4e6f5;
+            padding: 5px 20px;
+            border-radius: 30px;
+          }
+        }
+
+        .card-back {
+          background-color: #ffffff;
+          color: #000000;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid #1a1a1a;
+          border-radius: 50px;
+          font-size: 24px;
+          transform: rotateY(180deg);
+          padding: 16px;
+          box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+        }
+
+        .card-back ul {
+          align-items: start;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .card-back li {
+          align-items: center;
+          font-size: 20px;
+          margin: 0;
+          gap: 0px;
+        }
+      }
     }
   }
 
-  .card-back {
-    background-color: #ffffff;
-    color: #000000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #1a1a1a;
-    border-radius: 50px;
-    font-size: 24px;
-    transform: rotateY(180deg);
-    padding: 16px;
-    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-  }
+  @media (max-width: $phone-breakpoint) {
+    .page-services {
+      min-height: auto; // Allow height to adjust based on content
 
-  .card-back ul {
-    align-items: start;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-  }
+      .services-title {
+        font-size: 22px; // Adjust title size for mobile
+        text-align: center; // Center the title
+        margin-top: 20px; // Add margin for spacing
+      }
 
-  .card-back li {
-    align-items: center;
-    font-size: 20px;
-    margin: 0;
-    gap: 0px;
-  }}
+      .services {
+        flex-direction: column; // Ensure services stack vertically
+        align-items: center; // Center cards horizontally
+        gap: 20px; // Reduce gap between cards
+
+        .services-align {
+          // The media query here is already handled above
+        }
+
+        .card {
+          width: 95%; // Increase width for smaller screens
+          max-width: 400px; // Optional max width
+          height: auto; // Allow height to adjust based on content
+          perspective: 1000px; // Maintain perspective for 3D effect
+          animation: float 1.5s forwards infinite; // Adjust animation timing
+          margin-bottom: 20px; // Add margin for spacing between cards
+
+          .card-inner {
+            border-radius: 20px; // Reduce border radius for smaller screens
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2); // Softer shadow for mobile
+            transition: transform 0.6s; // Smooth transition for hover effect
+
+            &:hover .card-inner {
+              transform: rotateY(180deg); // 3D hover effect
+            }
+
+            .card-front,
+            .card-back {
+              padding: 15px; // Adjust padding for mobile
+              border-radius: 20px; // Consistent border radius
+            }
+
+            .card-front {
+              h3.card-title {
+                font-size: 20px; // Adjust title size for front
+              }
+
+              p.card-content {
+                font-size: 16px; // Adjust content size for front
+              }
+
+              .view-more {
+                padding: 5px 15px; // Adjust padding for the button on mobile
+                font-size: 16px; // Button text size
+              }
+            }
+
+            .card-back {
+              ul {
+                gap: 10px; // Reduce gap in the list for mobile
+
+                li {
+                  font-size: 16px; // Adjust font size for list items
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
-
 .about {
   width: 100%;
-  height: 1000px;
+  min-height: 1000px;
   position: relative;
   background-color: white;
   background-size: cover;
@@ -631,6 +789,10 @@ main {
       margin-top: 2.5%;
       margin-bottom: 2.5%;
       font-size: $title-font;
+      @media (max-width: $phone-breakpoint) {
+          font-size: 40px;
+          margin-top: 5%;
+        }
     }
 
     .about-inner{
@@ -641,6 +803,11 @@ main {
       height: 100%;
       flex-direction: row;
 
+      @media (max-width: $phone-breakpoint) {
+          flex-direction: column;
+          margin-top: 15%;
+        }
+
       .about-left{
        width: 45%;
        height: 100%;
@@ -648,6 +815,10 @@ main {
        justify-content: center;
        display: flex;
        animation: float 2s forwards infinite;
+
+      @media (max-width: $phone-breakpoint) {
+          width: 85%;
+        }
 
         .card {
           width: 500px;
@@ -664,6 +835,12 @@ main {
           -webkit-transition: all 0.3s;
           transition: all 0.3s;
           box-shadow: 20px 20px 60px #000000, -20px -20px 60px #bebebe;
+
+          @media (max-width: $phone-breakpoint) {
+            width: 100%;
+              transform: none;
+              height: 100%;
+            }
         }
       
         .card::before {
@@ -683,6 +860,13 @@ main {
           border: none;
           -webkit-transition: all 0.5s;
           transition: all 0.5s;
+
+          @media (max-width: $phone-breakpoint) {
+              -webkit-transform: skewX(-45deg);
+              -ms-transform: skewX(-45deg);
+              transform: skewX(-45deg);
+              width: 0;
+            }
         }
       
         .card::after {
@@ -702,6 +886,13 @@ main {
           border: none;
           -webkit-transition: all 0.5s;
           transition: all 0.5s;
+
+          @media (max-width: $phone-breakpoint) {
+            -webkit-transform: skewX(-45deg);
+              -ms-transform: skewX(-45deg);
+              transform: skewX(-45deg);
+              width: 0;
+            }
         }
       
         .card:hover {
@@ -735,11 +926,15 @@ main {
           .card-title{
             font-size: 24px;
             margin: 5%;
+
           }
 
           .card-text{
             font-size: 16px;
             margin: 5%;
+            @media (max-width: $phone-breakpoint) {
+                font-size: 14px;
+              }
           }
         }
 
@@ -749,6 +944,11 @@ main {
         height: 90%;
         width: 2px;
         background-color: #bebebe;
+        @media (max-width: $phone-breakpoint) {
+            width: 90%;
+            height: 2px;
+            margin-top: 50px;
+          }
       }
 
       .about-right{
@@ -758,6 +958,10 @@ main {
         justify-content: center;
         align-items: center;
        
+            @media (max-width: $phone-breakpoint) {
+                width: 90%;
+               margin-top: 5%;
+              }
 
         .card{
           width: 600px;
@@ -827,6 +1031,10 @@ main {
       margin-top: 2.5%;
       font-size: $title-font;
       color: #e0e0e0;
+      @media (max-width: $phone-breakpoint) {
+          font-size: 40px;
+          margin-top: 7%;
+        }
     }
 
     .pricing-cards{
@@ -853,6 +1061,10 @@ main {
     scroll-behavior: smooth;
     perspective: 1000px;
     position: relative;
+
+    @media (max-width: $phone-breakpoint) {
+        width: 90%;
+      }
  
   // Firefox scrollbar styles
         &::-webkit-scrollbar {
@@ -1027,9 +1239,6 @@ main {
    }
   }
 }
-
-
-
 }
 
 footer {

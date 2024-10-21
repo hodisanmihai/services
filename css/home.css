@@ -10,6 +10,12 @@ body {
   font-family: "Poppins";
   overflow-x: hidden;
 }
+@media (max-width: 600px) {
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
 body .reveal {
   opacity: 0;
   transform: translateY(50px);
@@ -144,6 +150,7 @@ header {
   height: 80px;
   background-color: #e4e6f5;
   z-index: 5;
+  width: 100vw;
 }
 header .header {
   display: flex;
@@ -251,7 +258,8 @@ header .header .hright .buttonb .burger.is-closed svg .line-top-bottom {
 
 main {
   margin-top: 80px;
-  width: 100vw;
+  width: 100%;
+  overflow-x: hidden;
 }
 main .landing {
   position: relative;
@@ -367,9 +375,59 @@ main .landing .landingcontent .landing-middle .landing-right .landing-buttons .b
   border-color: #666666;
   background: #292929;
 }
+@media (max-width: 600px) {
+  main .landing {
+    height: auto;
+  }
+  main .landing .landingcontent {
+    flex-direction: column;
+    padding: 10px;
+  }
+  main .landing .landingcontent .landing-top h1 {
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 0 75px;
+  }
+  main .landing .landingcontent .landing-middle {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .landing .landingcontent .landing-middle .landing-left,
+  main .landing .landingcontent .landing-middle .landing-right {
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+  main .landing .landingcontent .landing-middle .landing-left .landing-image {
+    width: 300px;
+    height: 300px;
+  }
+  main .landing .landingcontent .landing-middle .landing-right {
+    margin-bottom: 15%;
+  }
+  main .landing .landingcontent .landing-middle .landing-right .landing-right-top {
+    width: 90%;
+    text-align: center;
+  }
+  main .landing .landingcontent .landing-middle .landing-right .landing-right-top h2 {
+    font-size: 18px;
+    padding: 15px;
+  }
+  main .landing .landingcontent .landing-middle .landing-right .landing-buttons {
+    width: 80%;
+    flex-direction: row;
+    gap: 10px;
+  }
+  main .landing .landingcontent .landing-middle .landing-right .landing-buttons .boton-elegante {
+    font-size: 12px;
+    padding: 10 px 10px;
+    height: 35px;
+    margin: 0;
+  }
+}
 main .page-services {
   width: 100%;
-  height: 1175px;
+  min-height: 1200px;
   background-color: #e4e6f5;
   position: relative;
 }
@@ -401,6 +459,12 @@ main .page-services .services-content .services-title {
   margin-bottom: 5%;
   font-size: 70px;
 }
+@media (max-width: 600px) {
+  main .page-services .services-content .services-title {
+    font-size: 40px;
+    margin-top: 7%;
+  }
+}
 main .page-services .services-content .services {
   display: flex;
   align-items: center;
@@ -408,11 +472,22 @@ main .page-services .services-content .services {
   flex-direction: column;
   width: 100%;
   gap: 110px;
+  margin-top: 50px;
+}
+@media (max-width: 600px) {
+  main .page-services .services-content .services {
+    margin-bottom: 75px;
+  }
 }
 main .page-services .services-content .services .services-align {
   display: flex;
   flex-direction: row;
   gap: 120px;
+}
+@media (max-width: 600px) {
+  main .page-services .services-content .services .services-align {
+    flex-direction: column;
+  }
 }
 main .page-services .services-content .services .services-align .card {
   width: 190px;
@@ -486,9 +561,61 @@ main .page-services .services-content .services .services-align .card-back li {
   margin: 0;
   gap: 0px;
 }
+@media (max-width: 600px) {
+  main .page-services .page-services {
+    min-height: auto;
+  }
+  main .page-services .page-services .services-title {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  main .page-services .page-services .services {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  main .page-services .page-services .services .card {
+    width: 95%;
+    max-width: 400px;
+    height: auto;
+    perspective: 1000px;
+    animation: float 1.5s forwards infinite;
+    margin-bottom: 20px;
+  }
+  main .page-services .page-services .services .card .card-inner {
+    border-radius: 20px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s;
+  }
+  main .page-services .page-services .services .card .card-inner:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  main .page-services .page-services .services .card .card-inner .card-front,
+  main .page-services .page-services .services .card .card-inner .card-back {
+    padding: 15px;
+    border-radius: 20px;
+  }
+  main .page-services .page-services .services .card .card-inner .card-front h3.card-title {
+    font-size: 20px;
+  }
+  main .page-services .page-services .services .card .card-inner .card-front p.card-content {
+    font-size: 16px;
+  }
+  main .page-services .page-services .services .card .card-inner .card-front .view-more {
+    padding: 5px 15px;
+    font-size: 16px;
+  }
+  main .page-services .page-services .services .card .card-inner .card-back ul {
+    gap: 10px;
+  }
+  main .page-services .page-services .services .card .card-inner .card-back ul li {
+    font-size: 16px;
+  }
+}
 main .about {
   width: 100%;
-  height: 1000px;
+  min-height: 1000px;
   position: relative;
   background-color: white;
   background-size: cover;
@@ -522,6 +649,12 @@ main .about .about-content .about-title {
   margin-bottom: 2.5%;
   font-size: 70px;
 }
+@media (max-width: 600px) {
+  main .about .about-content .about-title {
+    font-size: 40px;
+    margin-top: 5%;
+  }
+}
 main .about .about-content .about-inner {
   display: flex;
   align-items: center;
@@ -530,6 +663,12 @@ main .about .about-content .about-inner {
   height: 100%;
   flex-direction: row;
 }
+@media (max-width: 600px) {
+  main .about .about-content .about-inner {
+    flex-direction: column;
+    margin-top: 15%;
+  }
+}
 main .about .about-content .about-inner .about-left {
   width: 45%;
   height: 100%;
@@ -537,6 +676,11 @@ main .about .about-content .about-inner .about-left {
   justify-content: center;
   display: flex;
   animation: float 2s forwards infinite;
+}
+@media (max-width: 600px) {
+  main .about .about-content .about-inner .about-left {
+    width: 85%;
+  }
 }
 main .about .about-content .about-inner .about-left .card {
   width: 500px;
@@ -549,6 +693,13 @@ main .about .about-content .about-inner .about-left .card {
   box-sizing: border-box;
   transition: all 0.3s;
   box-shadow: 20px 20px 60px #000000, -20px -20px 60px #bebebe;
+}
+@media (max-width: 600px) {
+  main .about .about-content .about-inner .about-left .card {
+    width: 100%;
+    transform: none;
+    height: 100%;
+  }
 }
 main .about .about-content .about-inner .about-left .card::before {
   content: "";
@@ -563,6 +714,12 @@ main .about .about-content .about-inner .about-left .card::before {
   border: none;
   transition: all 0.5s;
 }
+@media (max-width: 600px) {
+  main .about .about-content .about-inner .about-left .card::before {
+    transform: skewX(-45deg);
+    width: 0;
+  }
+}
 main .about .about-content .about-inner .about-left .card::after {
   content: "";
   height: 11px;
@@ -575,6 +732,12 @@ main .about .about-content .about-inner .about-left .card::after {
   transform: skewX(45deg);
   border: none;
   transition: all 0.5s;
+}
+@media (max-width: 600px) {
+  main .about .about-content .about-inner .about-left .card::after {
+    transform: skewX(-45deg);
+    width: 0;
+  }
 }
 main .about .about-content .about-inner .about-left .card:hover {
   transform: skewY(0deg);
@@ -607,10 +770,22 @@ main .about .about-content .about-inner .about-left .card__content .card-text {
   font-size: 16px;
   margin: 5%;
 }
+@media (max-width: 600px) {
+  main .about .about-content .about-inner .about-left .card__content .card-text {
+    font-size: 14px;
+  }
+}
 main .about .about-content .about-inner .about-divider {
   height: 90%;
   width: 2px;
   background-color: #bebebe;
+}
+@media (max-width: 600px) {
+  main .about .about-content .about-inner .about-divider {
+    width: 90%;
+    height: 2px;
+    margin-top: 50px;
+  }
 }
 main .about .about-content .about-inner .about-right {
   width: 45%;
@@ -618,6 +793,12 @@ main .about .about-content .about-inner .about-right {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 600px) {
+  main .about .about-content .about-inner .about-right {
+    width: 90%;
+    margin-top: 5%;
+  }
 }
 main .about .about-content .about-inner .about-right .card {
   width: 600px;
@@ -676,6 +857,12 @@ main .pricing .pricing-content .pricing-title {
   font-size: 70px;
   color: #e0e0e0;
 }
+@media (max-width: 600px) {
+  main .pricing .pricing-content .pricing-title {
+    font-size: 40px;
+    margin-top: 7%;
+  }
+}
 main .pricing .pricing-content .pricing-cards {
   height: 100%;
   width: 100%;
@@ -702,6 +889,11 @@ main .pricing .pricing-content .pricing-cards .pricing-inner {
   scroll-behavior: smooth;
   perspective: 1000px;
   position: relative;
+}
+@media (max-width: 600px) {
+  main .pricing .pricing-content .pricing-cards .pricing-inner {
+    width: 90%;
+  }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner::-webkit-scrollbar {
   width: 12px;
