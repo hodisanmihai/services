@@ -1052,7 +1052,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .bu
 }
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .button-container a {
-    padding: 0px 0px;
+    padding: 5px 10px;
   }
 }
 

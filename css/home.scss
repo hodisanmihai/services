@@ -1243,7 +1243,7 @@ main {
               justify-content: center;
 
               @media (max-width: $phone-breakpoint) {
-                padding: 0px 0px; // Adjusted padding for mobile
+                padding: 5px 10px; // Adjusted padding for mobile
               }
             }
           }
