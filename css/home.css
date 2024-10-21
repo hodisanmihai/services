@@ -874,7 +874,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner {
   gap: 50px;
   overflow-x: auto;
   overflow-y: hidden;
-  max-height: 600px;
+  max-height: 750px;
   padding: 20px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -886,7 +886,6 @@ main .pricing .pricing-content .pricing-cards .pricing-inner {
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner {
     width: 90%;
-    height: 800px;
   }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner::-webkit-scrollbar {
@@ -927,7 +926,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container {
   position: relative;
   display: flex;
   max-width: 350px;
-  height: 800px;
+  height: 650px;
   flex-direction: column;
   border-radius: 12px;
   background-color: #212121;
@@ -942,7 +941,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container {
 }
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container {
-    height: 100%;
+    max-height: 625px;
   }
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container.visible {

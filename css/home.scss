@@ -1048,7 +1048,7 @@ main {
         gap: 50px;
         overflow-x: auto;
         overflow-y: hidden;
-        max-height: 600px;
+        max-height: 750px;
         padding: 20px;
         user-select: none;
         scroll-behavior: smooth;
@@ -1057,7 +1057,6 @@ main {
 
         @media (max-width: $phone-breakpoint) {
           width: 90%;
-          height: 800px;
         }
 
         &::-webkit-scrollbar {
@@ -1105,7 +1104,7 @@ main {
           position: relative;
           display: flex;
           max-width: 350px;
-          height: 800px;
+          height: 650px;
           flex-direction: column;
           border-radius: 12px;
           background-color: #212121;
@@ -1119,7 +1118,7 @@ main {
           margin: 5px;
 
           @media (max-width: $phone-breakpoint) {
-            height: 100%;
+            max-height:625px;
           }
 
           &.visible {
