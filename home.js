@@ -1,63 +1,133 @@
-// home.js
-
-// Toggle sidebar visibility on button click
-document.getElementById('button').onclick = function() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('active');
-    this.querySelector('span').classList.toggle('is-closed');
-};
-
-// Smooth scroll function
-function smoothScroll(target, duration) {
-    const targetElement = document.querySelector(target);
-    const startPosition = window.pageYOffset;
-    const targetPosition = targetElement.getBoundingClientRect().top + startPosition;
+// Smooth scroll function with offset
+function smoothScrollTo(target, duration = 1000) {
+    const startPosition = window.scrollY;
+    const targetPosition = target.getBoundingClientRect().top + window.scrollY - 80; // Subtract 80px for offset
     const distance = targetPosition - startPosition;
     let startTime = null;
 
     function animation(currentTime) {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
-        const progress = Math.min(timeElapsed / duration, 1);
-        const ease = easeInOutCubic(progress);
-        window.scrollTo(0, startPosition + distance * ease);
-
-        if (timeElapsed < duration) requestAnimationFrame(animation); 
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
     }
 
-    requestAnimationFrame(animation); 
+    function ease(t, b, c, d) {
+        t /= d;
+        t--;
+        return c * (t * t * t + 1) + b;
+    }
+
+    requestAnimationFrame(animation);
 }
 
-// Easing function for smooth scrolling
-function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+// Toggle sidebar visibility on burger button click
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const burgerButton = document.getElementById('button');
+    
+    sidebar.classList.toggle('active');
+    burgerButton.querySelector('span').classList.toggle('is-closed');
 }
 
-// Handle clicks on sidebar items for smooth scrolling
-const listItems = document.querySelectorAll('#sidebar ul li');
-listItems.forEach(item => {
-    item.addEventListener('click', function() {
-        const targetId = this.querySelector('a').getAttribute('href');
-        smoothScroll(targetId, 1000);
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.remove('active');
-        document.getElementById('button').querySelector('span').classList.remove('is-closed'); 
+// Attach to the burger button
+document.getElementById('button').onclick = toggleSidebar;
+
+// Smooth scroll and close sidebar when a sidebar link is clicked
+document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); 
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('active');
+
+            const burgerButton = document.getElementById('button');
+            burgerButton.querySelector('span').classList.remove('is-closed');
+
+            setTimeout(() => {
+                smoothScrollTo(targetElement, 1500);
+            }, 300); // Delay for sidebar closing animation
+        }
     });
 });
 
-// Handle logo click for smooth scrolling to landing
-const logoLink = document.querySelector('.logo');
-logoLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    smoothScroll('#landing', 1000);
+// Add event listener for the logo
+document.querySelector('.logo').addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetElement = document.getElementById('landing');
+
+    if (targetElement) {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.remove('active');
+
+        const burgerButton = document.getElementById('button');
+        burgerButton.querySelector('span').classList.remove('is-closed');
+
+        setTimeout(() => {
+            smoothScrollTo(targetElement, 1500);
+        }, 300); // Delay for sidebar closing animation
+    }
 });
+
+document.querySelectorAll('footer ul li a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); 
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('active');
+
+            const burgerButton = document.getElementById('button');
+            burgerButton.querySelector('span').classList.remove('is-closed');
+
+            setTimeout(() => {
+                smoothScrollTo(targetElement, 1500);
+            }, 300); // Delay for sidebar closing animation
+        }
+    });
+});
+
+// Smooth scroll and close sidebar when any .scroll-link is clicked
+document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault(); 
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            // Close sidebar and reset burger button if it was from the sidebar
+            const sidebar = document.getElementById('sidebar');
+            const burgerButton = document.getElementById('button');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                burgerButton.querySelector('span').classList.remove('is-closed');
+            }
+
+            // Smooth scroll with delay for a better visual effect
+            setTimeout(() => {
+                smoothScrollTo(targetElement, 1500); // Adjust duration as needed
+            }, 300); // Delay can be tweaked
+        }
+    });
+});
+
+
 
 // Loading screen logic
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
     const minLoadingTime = 3500;
     const loadingDuration = 1500;
-
 
     const loadStartTime = performance.now();
 
@@ -77,44 +147,156 @@ window.addEventListener('load', function() {
     setTimeout(checkLoadDuration, loadingDuration);
 });
 
+// Scroll on reveal functionality
 document.addEventListener('DOMContentLoaded', function() {
     const reveals = document.querySelectorAll('.reveal');
 
-    function revealOnScroll() {
-        const scrollPos = window.scrollY + window.innerHeight;
+    function handleReveal() {
+        reveals.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
 
-        reveals.forEach(reveal => {
-            const elementPos = reveal.getBoundingClientRect().top + window.scrollY;
-
-            if (scrollPos > elementPos + 100) {
-                reveal.classList.add('visible');
+            if (elementTop < windowHeight - 150) {
+                element.classList.add('active');
             } else {
-                reveal.classList.remove('visible');
+                element.classList.remove('active');
             }
         });
     }
 
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
+    // Scroll event
+    window.addEventListener('scroll', () => {
+        handleReveal();
+    });
+
+    // Initial check
+    handleReveal();
 });
 
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const button = document.getElementById('button');
-  const burger = button.querySelector('.burger');
+// Cards show logic with % visibility requirement on both sides
+const cards = document.querySelectorAll('.pack-container');
+const pricingInner = document.querySelector('.pricing-inner');
 
-  sidebar.classList.toggle('active'); // Toggle sidebar visibility
-  burger.classList.toggle('active'); // Toggle burger button animation
+// Initially hide all cards
+cards.forEach(card => {
+    card.style.opacity = '0'; // Set opacity to 0
+    card.style.transform = 'rotateY(-55deg)'; // Set starting position
+});
+
+const checkVisibility = () => {
+    const containerRect = pricingInner.getBoundingClientRect();
+
+    cards.forEach((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardWidth = cardRect.right - cardRect.left;
+        const minVisibleWidth = cardWidth * 0.2;
+
+        const isVisible = 
+            cardRect.left < (containerRect.right) && 
+            cardRect.right > (containerRect.left) &&
+            (cardRect.right - Math.max(cardRect.left, containerRect.left)) >= minVisibleWidth && 
+            (Math.min(cardRect.right, containerRect.right) - cardRect.left) >= minVisibleWidth;
+
+        if (isVisible) {
+            card.style.opacity = '1';
+            card.style.transform = 'rotateY(0deg)';
+        } else {
+            card.style.opacity = '0.3';
+            card.style.transform = 'rotateY(-25deg)';
+        }
+    });
+};
+
+// Initial check with a slight delay
+setTimeout(() => {
+    checkVisibility();
+}, 500);
+
+// Add smooth scrolling to container
+pricingInner.style.scrollBehavior = 'smooth';
+
+// Grabbing functionality
+let isDown = false;
+let startX;
+let scrollLeft;
+
+pricingInner.addEventListener('mousedown', (e) => {
+    isDown = true;
+    pricingInner.style.cursor = 'grabbing';
+    startX = e.pageX - pricingInner.offsetLeft;
+    scrollLeft = pricingInner.scrollLeft;
+});
+
+pricingInner.addEventListener('mouseleave', () => {
+    isDown = false;
+    pricingInner.style.cursor = 'grab';
+});
+
+pricingInner.addEventListener('mouseup', () => {
+    isDown = false;
+    pricingInner.style.cursor = 'grab';
+});
+
+pricingInner.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - pricingInner.offsetLeft;
+    const walk = (x - startX) * 2;
+    pricingInner.scrollLeft = scrollLeft - walk;
+});
+
+// Throttled scroll handler
+let isScrolling = false;
+pricingInner.addEventListener('scroll', () => {
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            checkVisibility();
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            checkVisibility();
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
+});
+
+// Custom scrollbar implementation
+const content = document.querySelector('.content');
+const scrollbar = document.querySelector('.custom-scrollbar');
+const thumb = document.querySelector('.thumb');
+
+if (content && scrollbar && thumb) {
+    function updateScrollbar() {
+        const contentHeight = content.scrollHeight;
+        const visibleHeight = content.clientHeight;
+        const scrollPercent = visibleHeight / contentHeight;
+        const thumbHeight = scrollPercent * visibleHeight;
+
+        thumb.style.height = `${thumbHeight}px`;
+        scrollbar.style.display = thumbHeight < visibleHeight ? 'block' : 'none';
+    }
+
+    content.addEventListener('scroll', () => {
+        const scrollTop = content.scrollTop;
+        const contentHeight = content.scrollHeight;
+        const visibleHeight = content.clientHeight;
+        const scrollPercent = scrollTop / (contentHeight - visibleHeight);
+
+        scrollbar.scrollTop = scrollPercent * (scrollbar.clientHeight - thumb.clientHeight);
+    });
+
+    // Initialize scrollbar
+    updateScrollbar();
+    window.addEventListener('resize', updateScrollbar);
 }
 
-// Optional: To hide the sidebar when clicking outside of it
-document.addEventListener('click', function(event) {
-  const sidebar = document.getElementById('sidebar');
-  const button = document.getElementById('button');
-
-  if (!sidebar.contains(event.target) && !button.contains(event.target)) {
-    sidebar.classList.remove('active');
-    button.querySelector('.burger').classList.remove('active');
-  }
-});
-
+// Initialize the visibility check for the cards
+checkVisibility();
