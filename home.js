@@ -28,20 +28,34 @@ function toggleSidebar() {
     
     sidebar.classList.toggle('active');
     burgerButton.querySelector('span').classList.toggle('is-closed');
+
+    if (sidebar.classList.contains('active')) {
+        document.body.classList.add('body-no-scroll');
+    } else {
+        document.body.classList.remove('body-no-scroll');
+    }
 }
 
 document.getElementById('button').onclick = toggleSidebar;
 
+
 document.querySelectorAll('.sidebar a').forEach(link => {
     link.addEventListener('click', function (e) {
-        e.preventDefault(); 
+        const href = this.getAttribute('href');
 
-        const targetId = this.getAttribute('href').substring(1);
+        if (href.includes('.html')) {
+            return;
+        }
+
+        e.preventDefault();
+
+        const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.remove('active');
+            document.body.classList.remove('body-no-scroll');
 
             const burgerButton = document.getElementById('button');
             burgerButton.querySelector('span').classList.remove('is-closed');
@@ -53,23 +67,35 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     });
 });
 
+
+
 document.querySelector('.logo').addEventListener('click', function (e) {
     e.preventDefault();
 
-    const targetElement = document.getElementById('landing');
+    const href = this.getAttribute('href');
 
-    if (targetElement) {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.remove('active');
+    if (href.includes('.html')) {
 
-        const burgerButton = document.getElementById('button');
-        burgerButton.querySelector('span').classList.remove('is-closed');
+        window.location.href = href;
+    } else {
+        
+        const targetElement = document.getElementById('landing');
 
-        setTimeout(() => {
-            smoothScrollTo(targetElement, 1000);
-        }, 300);
+        if (targetElement) {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('active');
+            document.body.classList.remove('body-no-scroll');
+
+            const burgerButton = document.getElementById('button');
+            burgerButton.querySelector('span').classList.remove('is-closed');
+
+            setTimeout(() => {
+                smoothScrollTo(targetElement, 1000);
+            }, 300);
+        }
     }
 });
+
 
 document.querySelectorAll('footer ul li a').forEach(link => {
     link.addEventListener('click', function (e) {

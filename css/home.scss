@@ -271,6 +271,10 @@ header {
   }
 }
 
+.body-no-scroll {
+  overflow: hidden;
+}
+
 
 .sidebar {
   z-index: 5;
@@ -1319,6 +1323,585 @@ main {
     }
   }
 }
+
+.hero {
+  height: 55vh;
+  background-color: #1B262C;
+  color: #e0e0e0;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Centers content vertically
+  align-items: center; // Centers content horizontally
+  position: relative;
+  text-align: center; // Ensure text is centered
+
+  .background {
+      position: absolute; // Fix position for full viewport coverage
+      width: 100%; // Full width of the viewport
+      height: 100%; // Full height of the viewport
+      top: 0; // Align to the top
+      left: 0; // Align to the left
+      overflow: hidden; // Prevent overflow of dots
+      /* From https://css.glass */
+  
+      span {
+        width: 50vmin; // Set width for dots
+        height: 50vmin; // Set height for dots
+        border-radius: 50%; // Make dots circular
+        backface-visibility: hidden; // Prevent backface visibility
+        position: absolute; // Position absolutely for dots
+        animation: move 45s linear infinite; // Animation properties
+  
+        // Specific styles for each dot
+        &:nth-child(1) {
+          color: #ffab8b;
+          top: 80%;
+          left: 48%;
+          animation-duration: 48s;
+          animation-delay: -39s;
+          transform-origin: 12vw 25vh;
+          box-shadow: 100vmin 0 12.97vmin currentColor;
+        }
+  
+        &:nth-child(2) {
+          color: #3ed3b5;
+          top: 48%;
+          left: 39%;
+          animation-duration: 26s;
+          animation-delay: -46s;
+          transform-origin: -15vw 2vh;
+          box-shadow: -100vmin 0 13.40vmin currentColor;
+        }
+  
+        &:nth-child(3) {
+          color: #3ed3b5;
+          top: 3%;
+          left: 96%;
+          animation-duration: 24s;
+          animation-delay: -13s;
+          transform-origin: 21vw -19vh;
+          box-shadow: 100vmin 0 13.39vmin currentColor;
+        }
+  
+        &:nth-child(4) {
+          color: #f6e4c3;
+          top: 96%;
+          left: 1%;
+          animation-duration: 49s;
+          animation-delay: -45s;
+          transform-origin: 21vw -23vh;
+          box-shadow: 100vmin 0 13.41vmin currentColor;
+        }
+  
+        &:nth-child(5) {
+          color: #3ed3b5;
+          top: 76%;
+          left: 97%;
+          animation-duration: 49s;
+          animation-delay: -21s;
+          transform-origin: -12vw 3vh;
+          box-shadow: 100vmin 0 12.56vmin currentColor;
+        }
+  
+        &:nth-child(6) {
+          color: #3ed3b5;
+          top: 71%;
+          left: 94%;
+          animation-duration: 46s;
+          animation-delay: -32s;
+          transform-origin: 22vw -18vh;
+          box-shadow: 100vmin 0 13.30vmin currentColor;
+        }
+  
+        &:nth-child(7) {
+          color: #3ed3b5;
+          top: 21%;
+          left: 16%;
+          animation-duration: 28s;
+          animation-delay: -33s;
+          transform-origin: -22vw -24vh;
+          box-shadow: 100vmin 0 13.06vmin currentColor;
+        }
+  
+        &:nth-child(8) {
+          color: #ffab8b;
+          top: 25%;
+          left: 10%;
+          animation-duration: 19s;
+          animation-delay: -5s;
+          transform-origin: 14vw -2vh;
+          box-shadow: 100vmin 0 12.57vmin currentColor;
+        }
+  
+        &:nth-child(9) {
+          color: #ffab8b;
+          top: 75%;
+          left: 24%;
+          animation-duration: 32s;
+          animation-delay: -30s;
+          transform-origin: 4vw -11vh;
+          box-shadow: 100vmin 0 13.28vmin currentColor;
+        }
+  
+        &:nth-child(10) {
+          color: #ffab8b;
+          top: 62%;
+          left: 58%;
+          animation-duration: 10s;
+          animation-delay: -41s;
+          transform-origin: -7vw -7vh;
+          box-shadow: 100vmin 0 12.53vmin currentColor;
+        }
+  
+        &:nth-child(11) {
+          color: #f6e4c3;
+          top: 67%;
+          left: 99%;
+          animation-duration: 55s;
+          animation-delay: -11s;
+          transform-origin: 17vw 17vh;
+          box-shadow: 100vmin 0 12.71vmin currentColor;
+        }
+  
+        &:nth-child(12) {
+          color: #f6e4c3;
+          top: 60%;
+          left: 32%;
+          animation-duration: 15s;
+          animation-delay: -34s;
+          transform-origin: 9vw -21vh;
+          box-shadow: 100vmin 0 12.84vmin currentColor;
+        }
+      }
+    }
+  
+    // Keyframes for animation
+    @keyframes move {
+      100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+      }
+    }
+
+  .hero-content {
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; // Arrange items in a column
+    align-items: center; // Center horizontally
+    justify-content: center; // Center vertically
+    position: relative;
+    z-index: 1; // Ensure content is above background
+    padding: 20px;
+    background: rgba(27, 38, 44, 0.29);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(18.7px);
+      -webkit-backdrop-filter: blur(18.7px);
+
+      @media (max-width:$phone-breakpoint) {
+        height: auto;
+      }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      width: 30%; // Fixed width for button
+      height: 40px; // Fixed height for button
+      text-decoration: none;
+      border: 2px solid #2c2c2c;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      cursor: pointer;
+      border-radius: 35px;
+      transition: all 0.4s ease;
+      outline: none;
+      overflow: hidden;
+      font-weight: bold;
+      margin: 10px 0; // Space above and below button
+      box-shadow: -10px 10px 30px rgba(0, 0, 0, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      @media (max-width:$phone-breakpoint) {
+        width: 80%;
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+        transform: scale(0);
+        transition: transform 0.5s ease;
+      }
+
+      &:hover::after {
+        transform: scale(4);
+      }
+
+      &:hover {
+        border-color: #666666;
+        background: #292929;
+      }
+    }
+
+    img {
+      width: 70%; // Adjust width to be responsive
+      max-width: 500px;
+      margin-top: 30px;
+      animation: float 2s infinite;
+
+      @media (max-width:$phone-breakpoint) {
+        width: 50%;
+      }
+
+    }
+  }
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+.contact-form {
+  background-color: #e4e6f5;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  max-width: 500px;
+  margin: 1rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Radio button styling */
+  .radio-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    label {
+      margin: 0.5rem 0;
+      cursor: pointer;
+      position: relative;
+      /* Position for the toggle effect */
+
+      /* Add sliding effect */
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 0, 0, 0.5);
+        /* Background for selected state */
+        border-radius: 5px;
+        transform: translateY(-50%) scaleY(0);
+        /* Initially hidden */
+        transition: transform 0.3s ease;
+        /* Smooth transition */
+        z-index: 0;
+        /* Behind the text */
+      }
+
+      input[type="radio"] {
+        display: none;
+        /* Hide the default radio button */
+      }
+
+      span {
+        background-color: white;
+        display: block;
+        padding: 10px 20px;
+        border: 2px solid #ccc;
+        /* Default border color */
+        border-radius: 5px;
+        transition: background-color 0.3s, border-color 0.3s;
+        position: relative;
+        /* Position for z-index to work */
+        z-index: 1;
+        /* Above the toggle background */
+      }
+
+      /* Change color when the radio button is checked */
+      input[type="radio"]:checked+span {
+        background-color: transparent;
+        /* No background color */
+        border-color: transparent;
+        /* Hide border */
+        background-color: #ccc;
+        color: #007BFF;
+        /* Change text color */
+
+        /* Show the toggle background */
+        &::before {
+          transform: translateY(-50%) scaleY(1);
+          /* Expand to full size */
+        }
+      }
+
+      /* Hover effect */
+      &:hover span {
+        border-color: #007BFF;
+        /* Change border on hover */
+      }
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    &:focus {
+      /* Change this color to your brand color */
+      outline: none;
+    }
+  }
+
+.drag-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .drag-container-inner{
+    width: 70%;
+    height: 20%;
+    background-color: #007BFF;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    .background-text{
+      position: absolute;
+      font-size: 0.7rem;
+      color: white;
+    }
+
+.drag-to-submit {
+  width: 80%;
+  background: transparent;
+  color: white;
+  padding: 1em;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  transition: transform 0.3s ease;
+
+   span{
+    margin-left: 30%;
+    font-weight: 900;
+   }
+}
+
+  }
+
+
+}
+}
+
+  .contact-info {
+    width: 100%;
+    height:100%;
+    margin: 1rem;
+    text-align: center;
+    background-color: #e4e6f5;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    padding: 50px 0;
+    
+
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      gap: 20px;
+      font-weight: 600;
+    }
+
+    .social-media-links {
+      margin-top: 1rem;
+
+      h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      a {
+        margin: 0 5px;
+        color: #007BFF;
+        text-decoration: none;
+
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .modal-content {
+    overflow: hidden; // Prevent internal scroll
+    background-color: white;
+    transform: translate(50%, 50%);
+    padding: 0px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center; // Center content
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 20px; // Add padding for inner spacing
+
+    @media (max-width:$phone-breakpoint) {
+      flex-direction: column;
+      width: 90%;
+      height: 100%;
+      transform: translate(0);
+      margin: 0;
+      gap: 20px;
+    }
+     
+    .modal-elements{ 
+      width: 50%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+    @media (max-width:$phone-breakpoint) {
+      height: 50%;
+      width: 90%;
+      gap: 20px;
+      padding: 20px;
+    }
+
+      a{
+        font-size: 24px;
+        color: #007BFF;
+      }
+
+    }
+
+    .modal-svg{
+      width: 50%;
+        aspect-ratio: 3/2;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @media (max-width:$phone-breakpoint) {
+          }
+    }
+  }
+}
+}
+
+.faq {
+  padding: 2rem;
+  background-color: #fff;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+    background: #e4e6f5;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  }
+
+  .faq-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 3fr));
+      gap: 20px;
+      
+      @media (max-width:$phone-breakpoint) {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+      }
+
+  .faq-item {
+    margin-bottom: 1rem;
+    background: #e4e6f5;
+    border-radius: 16px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+
+    strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+}
+
 }
 
 footer {

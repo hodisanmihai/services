@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="icon" href="images/logo-hm.png" type="image/x-icon">
+  <title>Hodisan Mihai</title>
+</head>
+
+<body>
+
+<style>
+  
+</style>
+
+
+  <div id="loading-screen">
+    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+      <title>Loading Screen</title>
+      <g id="Background">
+        <path class="border"
+          d="m163 68h34v106l-34-19zm142 0h34v88l-34 19zm-215 61l59 33v39l-24-13v200h-6l-28-16zm317 3h3l-1 235-34 18v-195l-22 12v-39zm-245 38l89 51 89-50v39l-1 197-33 19-1-196-53 31-55-31-1 202-33-19z" />
+        <path class="s0"
+          d="m163 68h34v106l-34-19zm142 0h34v88l-34 19zm-215 61l59 33v39l-24-13v200h-6l-28-16zm317 3h3l-1 235-34 18v-195l-22 12v-39zm-245 38l89 51 89-50v39l-1 197-33 19-1-196-53 31-55-31-1 202-33-19z" />
+      </g>
+      <defs>
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#91989D; stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#383B3B; stop-opacity:1" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <header>
+    <div class="header">
+      <a href="home.html#landing" class="logo" style="background-image: url(images/logo-hm.png);"></a>
+      <div class="hright">
+        <button onclick="toggleSidebar()" class="buttonb" id="button">
+          <span class="burger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22">
+              </path>
+              <path class="line" d="M7 16 27 16"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-content">
+      <ul>
+        <li><a href="home.html#landing">Home</a></li>
+        <li><a href="home.html#services">Servicii</a></li>
+        <li><a href="home.html#about">About</a></li>
+        <li><a href="home.html#pricing">Pachete</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="custom-scrollbar">
+    <div class="thumb"></div>
+  </div>
+
+  
+  
+<main>
+
+  
+
+<section class="hero">
+      
+<div class="background">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+ <div class="hero-content">
+  <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Suntem aici pentru a te ajuta!</h1>
+  <p style="font-size: 1.25rem; margin-bottom: 30px;">Completează formularul de mai jos sau contactează-ne direct pentru
+    întrebări sau asistență.</p>
+  <a href="" class="cta-button"><span>Contactează-ne
+    astăzi!</span></a>
+
+  <!-- SVG Illustration -->
+  <div style="margin-top: 30px;">
+    <img src="images/undraw_engineering_team_a7n2.svg" style="animation:  float 2s infinite;">
+  </div>
+  </div>
+</section>
+
+
+  <section class="contact-container">
+
+    <div class="contact-form">
+      <h2>Alege oferta și începe colaborarea</h2>
+      <form id="myForm" action="https://formspree.io/f/mnnqnved" method="POST" data-formspree="submit">
+        <div class="radio-input">
+          <label>
+            <input value="basic" name="value-radio" id="value-1" type="radio" />
+            <span>Packet de baza</span>
+          </label>
+          <label>
+            <input value="standard" name="value-radio" id="value-2" type="radio" />
+            <span>Pachet standard</span>
+          </label>
+          <label>
+            <input value="premium" name="value-radio" id="value-3" type="radio" />
+            <span>Pachet premium</span>
+          </label>
+          <label>
+            <input value="restaurant-simplu" name="value-radio" id="value-4" type="radio" />
+            <span>Pachet restaurant simplu</span>
+          </label>
+          <label>
+            <input value="restaurant-avansat" name="value-radio" id="value-5" type="radio" />
+            <span>Pachet restaurant avansat</span>
+          </label>
+          <label>
+            <input value="magazin-online" name="value-radio" id="value-6" type="radio" />
+            <span>Pachet magazin online</span>
+          </label>
+          <span class="selection"></span>
+        </div>
+  
+        <label for="name">Nume si Prenume:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="phone">Numar de telefon:</label>
+        <input type="tel" id="phone" name="phone" required>
+  
+        <label for="message">Descriere (optional):</label>
+        <textarea id="message" name="message" rows="4" placeholder="Descrie-ne proiectul tău..."></textarea>
+  
+        <div class="drag-container">
+          <div class="drag-container-inner">
+            <span class="background-text">Gliseaza pentru a trimite</span>
+            <button type="submit" class="drag-to-submit">
+              <div class="svg-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path fill="currentColor"
+                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                  </path>
+                </svg>
+              </div>
+              <span>Trimite</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div class="contact-info">
+      <h3>Doresti mai multe detalii?</h3>
+      <h4>Contactează-ne:</h4>
+      <p>Email <i class="fas fa-envelope-open-text" style="
+        color: #007BFF;  margin: 0 5px;" ></i>: <a href="mailto:mihaihodisan@gmail.com" style="
+        color: #007BFF; margin: 0 5px; 
+      text-decoration: none;">mihaihodisan@gmail.com</a></p>
+      <p>Telefon<i class="fas fa-phone" style="
+        color: #007BFF;  margin: 0 5px;"></i>:<a href="tel:0742592669" style="
+        color: #007BFF; margin: 0 5px; 
+      text-decoration: none;">0742592669</a></p>
+      <div class="social-media-links">
+        <h4>Social Media:</h4>
+        <a href="https://www.facebook.com/hodisan.mihai.6" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/hodii18640/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/mihai-hodisan-6b93832a7/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+<div id="successModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-svg" style="background-image: url(images/undrawpopup.svg);"></div>
+    <div class="modal-elements">
+    <h2 style="color:#007BFF">Formular trimis cu succes!</h2>
+    <h4>Îți mulțumesc pentru trimiterea formularului! Voi analiza informațiile și te voi contacta în curând.</h4>
+    <h4>Vei fi contactat telefonic sau vei primi un email in urmatoarele 24 de ore. Te rog să verifici căsuța de email pentru detalii.</h4>
+    <h4>Între timp, îți recomand să explorezi celelalte servicii sau articole de pe site-ul meu.</h4>
+      <a href="home.html"><i class="fas fa-home"></i></a>
+      </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <section class="faq">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-content">
+<div class="faq-item">
+  <strong>Ce servicii oferiți?</strong>
+  <p>Oferim o gamă de servicii de design web, inclusiv pagini de destinație personalizate, soluții de comerț electronic
+    și servicii de branding.</p>
+</div>
+<div class="faq-item">
+  <strong>Cât timp durează finalizarea unui proiect?</strong>
+  <p>Durata variază în funcție de complexitatea proiectului. De obicei, durează între 2 și 6 săptămâni.</p>
+</div>
+<div class="faq-item">
+  <strong>Pot vedea exemple ale lucrărilor dumneavoastră?</strong>
+  <p>Desigur! Consultați portofoliul nostru pentru exemple ale proiectelor anterioare.</p>
+</div>
+<div class="faq-item">
+  <strong>Cum pot începe?</strong>
+  <p>Pur și simplu completați formularul de contact sau sunați-ne, și vom stabili o consultare pentru a discuta despre
+    nevoile dumneavoastră.</p>
+</div>
+<div class="faq-item">
+  <strong>Ce metode de plată acceptați?</strong>
+  <p>Acceptăm diverse metode de plată, inclusiv carduri de credit și PayPal. Vă rugăm să întrebați pentru detalii
+    specifice.</p>
+</div>
+<div class="faq-item">
+  <strong>Oferiți suport tehnic după livrarea proiectului?</strong>
+  <p>Da, oferim suport tehnic și asistență post-livrare pentru a ne asigura că totul funcționează conform așteptărilor
+    dumneavoastră.</p>
+</div>
+<div class="faq-item">
+  <strong>Ce tip de clienți colaborați?</strong>
+  <p>Colaborăm cu antreprenori și mici afaceri care doresc soluții personalizate adaptate nevoilor lor specifice.</p>
+</div>
+<div class="faq-item">
+  <strong>Este posibil să fac modificări după ce proiectul a început?</strong>
+  <p>Da, suntem flexibili și putem discuta modificări pe parcursul procesului de dezvoltare, cu condiția să fie
+    comunicate la timp.</p>
+</div>
+<div class="faq-item">
+  <strong>Cum pot evalua bugetul pentru proiectul meu?</strong>
+  <p>Estimarea bugetului depinde de complexitatea și cerințele proiectului. Vă putem oferi o estimare detaliată după o
+    discuție inițială.</p>
+</div>
+<div class="faq-item">
+  <strong>Oferiți servicii de optimizare SEO?</strong>
+  <p>Da, oferim servicii de optimizare pentru motoarele de căutare (SEO) pentru a vă ajuta să creșteți vizibilitatea
+    online și să atrageți mai mulți clienți.</p>
+</div>
+<div class="faq-item">
+  <strong>Care este procesul de lucru?</strong>
+  <p>Procesul nostru de lucru include o analiză inițială a nevoilor clientului, dezvoltarea unui plan de proiect,
+    designul și implementarea soluției, urmate de teste și feedback.</p>
+</div>
+<div class="faq-item">
+  <strong>Cum comunicăm pe parcursul procesului de dezvoltare?</strong>
+  <p>Ne asigurăm că suntem mereu în contact prin e-mail, apeluri telefonice sau videoconferințe, astfel încât să fiți la
+    curent cu progresul proiectului dumneavoastră.</p>
+</div>
+    </div>
+  </section>
+</main>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="media reveal">
+        <p><i class="fas fa-share-alt reveal"></i> Social Media:</p>
+        <a href="https://www.instagram.com/hodii18640/" target="_blank" class="instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/hodisan.mihai.6" target="_blank" class="facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/0742592669" target="_blank" class="twitter">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="" target="_blank" class="linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+
+      <div class="contact-info reveal">
+        <p><i class="fas fa-envelope"></i> Contact:</p>
+        <p><i class="fas fa-envelope-open-text"></i> Email: <a
+            href="mailto:mihaihodisan@gmail.com">mihaihodisan@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> Phone: <a href="tel:0742592669">0742 592 669</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Location: Oradea, Romania</p>
+      </div>
+
+      <div class="quick-links reveal">
+        <p><i class="fas fa-link"></i> Quick Links:</p>
+        <ul>
+          <li><i class="fas fa-info-circle"></i> <a href="#about">About</a></li>
+          <li><i class="fas fa-code"></i> <a href="#services">Services</a></li>
+          <li><i class="fas fa-home"></i> <a href="#landing">Home</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 <span
+          style="display: inline-block; width: 30px; height: 30px; background-image: url(images/logo-hm.png); background-size: contain; background-repeat: no-repeat; vertical-align: middle; margin-right: 5px;"></span>.
+        All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+
+  <script src="home.js"></script>
+  <script>
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const dragButton = document.querySelector(".drag-to-submit");
+    const svgIcon = dragButton.querySelector("svg");
+    const dragContainerInner = document.querySelector(".drag-container-inner");
+    const backgroundText = document.querySelector(".background-text");
+    const containerWidth = dragContainerInner.offsetWidth;
+    let isDragging = false;
+    let startX = 0;
+    let currentX = 0;
+    let dragDistance = 0;
+
+    function startDrag(e) {
+      e.preventDefault();
+      isDragging = true;
+      startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+      dragButton.style.transition = "none";
+      dragContainerInner.style.transition = "none";
+      backgroundText.style.transition = "none";
+    }
+
+    function onDrag(e) {
+      if (!isDragging) return;
+
+      currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+      dragDistance = currentX - startX;
+
+      if (dragDistance > 0) {
+        const progress = Math.min(dragDistance / containerWidth, 1);
+        dragButton.style.transform = `translateX(${progress * 100}%)`;
+        svgIcon.style.transform = `rotate(${Math.min(progress * 45, 45)}deg)`;
+
+        // Change background color based on progress
+        if (progress >= 0.9) {
+          const darkenFactor = (progress - 0.9) / 0.1;
+          const newColor = `rgba(0, 123, 255, ${1 - darkenFactor * 0.5})`; // Darker effect
+          dragContainerInner.style.backgroundColor = newColor;
+        } else {
+          dragContainerInner.style.backgroundColor = "#007BFF"; // Original color
+        }
+
+        // Fade out text as the button is dragged
+        backgroundText.style.opacity = 1 - Math.min(progress / 0.7, 1);
+      }
+    }
+
+    function endDrag(e) {
+      if (isDragging && dragDistance > containerWidth * 0.9) {
+        // Validate form fields before submission
+        const form = document.getElementById("myForm");
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const packageSelected = document.querySelector('input[name="value-radio"]:checked');
+
+        if (name && phone && packageSelected) {
+          // Create FormData object to send to Formspree
+          const formData = new FormData(form);
+
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+            .then(response => {
+              if (response.ok) {
+                // Show success modal instead of redirecting
+                document.getElementById('successModal').style.display = 'block';
+              } else {
+                alert("A apărut o eroare. Te rugăm să încerci din nou.");
+                resetDrag(); // Reset the drag if not valid
+              }
+            })
+            .catch(error => {
+              alert("A apărut o eroare. Te rugăm să încerci din nou.");
+              console.error('Error:', error);
+              resetDrag(); // Reset the drag on error
+            });
+        } else {
+          alert("Te rog completează toate câmpurile înainte de a trimite.");
+          resetDrag(); // Reset the drag if not valid
+        }
+      } else {
+        resetDrag(); // Reset the drag if not enough drag distance
+      }
+      isDragging = false;
+    }
+
+    function resetDrag() {
+      dragButton.style.transition = "transform 0.3s";
+      dragButton.style.transform = "translateX(0)";
+      svgIcon.style.transform = "rotate(0)";
+      backgroundText.style.transition = "opacity 0.3s ease";
+      backgroundText.style.opacity = 1;
+    }
+
+    // Event listeners for mouse and touch
+    dragButton.addEventListener("mousedown", startDrag);
+    dragButton.addEventListener("touchstart", startDrag);
+    dragButton.addEventListener("mousemove", onDrag);
+    dragButton.addEventListener("touchmove", onDrag);
+    dragButton.addEventListener("mouseup", endDrag);
+    dragButton.addEventListener("touchend", endDrag);
+    dragButton.addEventListener("mouseleave", endDrag);
+    dragButton.addEventListener("touchcancel", endDrag);
+
+    // Modal close functionality
+    const closeModal = document.getElementById('closeModal');
+    closeModal.addEventListener('click', () => {
+      document.getElementById('successModal').style.display = 'none';
+    });
+  });
+
+  
+
+  </script>
+</body>
+
+</html>
