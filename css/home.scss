@@ -114,7 +114,6 @@ body {
   }
 }
 
-// keyframe
 
 @keyframes border-animation {
   0% {
@@ -178,8 +177,8 @@ body {
 
 @keyframes slideIn {
   to {
-    transform: translateX(0); // Slide to the original position
-    opacity: 1; // Fade in
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -293,13 +292,12 @@ header {
   align-items: center;
   transform: translateX(-100%);
   transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0; // Start with 0 opacity
+  opacity: 0;
 
   &.active {
     transform: translateX(0);
-    opacity: 1; // Fade in
+    opacity: 1;
 
-    // Animate child elements after the sidebar opens
     .sidebar-content ul li {
       animation: slideIn 0.3s forwards;
     }
@@ -319,11 +317,9 @@ header {
       li {
         margin: 15px 0;
 
-        // Initial state for animation
         transform: translateX(-20px);
         opacity: 0;
 
-        // Adding animation delay for each item
         &:nth-child(1) {
           animation-delay: 0.6s;
         }
@@ -362,7 +358,7 @@ header {
 main {
   margin-top: $header-height;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 
 
   .landing {
@@ -1106,6 +1102,7 @@ main {
         scroll-behavior: smooth;
         perspective: 1000px;
         position: relative;
+        gap:10px;
 
         @media (max-width: $phone-breakpoint) {
           width: 90%;
@@ -1331,29 +1328,27 @@ main {
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
-  justify-content: center; // Centers content vertically
-  align-items: center; // Centers content horizontally
+  justify-content: center;
+  align-items: center;
   position: relative;
-  text-align: center; // Ensure text is centered
+  text-align: center;
 
   .background {
-      position: absolute; // Fix position for full viewport coverage
-      width: 100%; // Full width of the viewport
-      height: 100%; // Full height of the viewport
-      top: 0; // Align to the top
-      left: 0; // Align to the left
-      overflow: hidden; // Prevent overflow of dots
-      /* From https://css.glass */
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0; 
+      overflow: hidden;
   
       span {
-        width: 50vmin; // Set width for dots
-        height: 50vmin; // Set height for dots
-        border-radius: 50%; // Make dots circular
-        backface-visibility: hidden; // Prevent backface visibility
-        position: absolute; // Position absolutely for dots
-        animation: move 45s linear infinite; // Animation properties
+        width: 50vmin;
+        height: 50vmin;
+        border-radius: 50%;
+        backface-visibility: hidden;
+        position: absolute;
+        animation: move 45s linear infinite;
   
-        // Specific styles for each dot
         &:nth-child(1) {
           color: #ffab8b;
           top: 80%;
@@ -1476,7 +1471,6 @@ main {
       }
     }
   
-    // Keyframes for animation
     @keyframes move {
       100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
@@ -1487,11 +1481,11 @@ main {
     width: 95%;
     height: 100%;
     display: flex;
-    flex-direction: column; // Arrange items in a column
-    align-items: center; // Center horizontally
-    justify-content: center; // Center vertically
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    z-index: 1; // Ensure content is above background
+    z-index: 1;
     padding: 20px;
     background: rgba(27, 38, 44, 0.29);
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -1513,8 +1507,8 @@ main {
     }
 
     .cta-button {
-      width: 30%; // Fixed width for button
-      height: 40px; // Fixed height for button
+      width: 30%;
+      height: 40px;
       text-decoration: none;
       border: 2px solid #2c2c2c;
       background-color: #1a1a1a;
@@ -1525,7 +1519,7 @@ main {
       outline: none;
       overflow: hidden;
       font-weight: bold;
-      margin: 10px 0; // Space above and below button
+      margin: 10px 0;
       box-shadow: -10px 10px 30px rgba(0, 0, 0, 1);
       display: flex;
       align-items: center;
@@ -1565,7 +1559,7 @@ main {
     }
 
     img {
-      width: 70%; // Adjust width to be responsive
+      width: 70%;
       max-width: 500px;
       margin-top: 30px;
       animation: float 2s infinite;
@@ -1732,6 +1726,7 @@ main {
   align-items: center;
   cursor: grab;
   transition: transform 0.3s ease;
+  transform: translateX(-30px);
 
    span{
     margin-left: 30%;
@@ -1799,7 +1794,7 @@ main {
   background-color: rgba(0, 0, 0, 0.8);
 
   .modal-content {
-    overflow: hidden; // Prevent internal scroll
+    overflow: hidden;
     background-color: white;
     transform: translate(50%, 50%);
     padding: 0px;
@@ -1808,10 +1803,10 @@ main {
     height: 50%;
     position: relative;
     display: flex;
-    justify-content: center; // Center content
+    justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    padding: 20px; // Add padding for inner spacing
+    padding: 20px;
 
     @media (max-width:$phone-breakpoint) {
       flex-direction: column;

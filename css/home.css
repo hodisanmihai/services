@@ -287,7 +287,7 @@ header .header .hright .buttonb .burger.is-closed svg .line-top-bottom {
 main {
   margin-top: 80px;
   width: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 main .landing {
   position: relative;
@@ -925,6 +925,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner {
   scroll-behavior: smooth;
   perspective: 1000px;
   position: relative;
+  gap: 10px;
 }
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner {
@@ -1132,7 +1133,6 @@ main .hero .background {
   top: 0;
   left: 0;
   overflow: hidden;
-  /* From https://css.glass */
 }
 main .hero .background span {
   width: 50vmin;
@@ -1486,6 +1486,7 @@ main .contact-container .contact-form .drag-container .drag-container-inner .dra
   align-items: center;
   cursor: grab;
   transition: transform 0.3s ease;
+  transform: translateX(-30px);
 }
 main .contact-container .contact-form .drag-container .drag-container-inner .drag-to-submit span {
   margin-left: 30%;

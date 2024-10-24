@@ -22,6 +22,8 @@ function smoothScrollTo(target, duration = 1000) {
     requestAnimationFrame(animation);
 }
 
+
+
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     const burgerButton = document.getElementById('button');
