@@ -1057,6 +1057,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .pr
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .pack-description {
   font-size: 16px;
   margin-bottom: 15px;
+  margin-top: -5px;
 }
 @media (max-width: 600px) {
   main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .pack-description {
