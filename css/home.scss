@@ -1012,7 +1012,7 @@ main {
           .card {
             width: 600px;
             aspect-ratio: 16/8;
-            background-size: contain;
+            background-size: cover;
             background-repeat: no-repeat;
             border-radius: 16px;
             box-shadow: 20px 20px 60px #000000, -20px -20px 60px #bebebe;
