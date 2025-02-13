@@ -1040,6 +1040,7 @@ main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .pr
   margin-top: 10px;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  color:#e6d8d8;
 }
 main .pricing .pricing-content .pricing-cards .pricing-inner .pack-container .price-container span:last-child {
   align-self: flex-end;
